@@ -6,7 +6,7 @@
 
   // marvelCtrl.$inject = ["marvelCtrl"]
   function marvelCtrl(){
-    var home = this;
+    var marvel = this;
 
   }
 })();
