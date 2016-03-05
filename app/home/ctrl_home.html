@@ -1,13 +1,14 @@
-<<<<<<< HEAD
 <div class="container">
   <div class="row">
         <div class="col s12 m7">
-          <div class="card">
+          {{home}}
+          <div class="card" ng-repeat="character in marvel.characters">
             <div class="card-image">
               <img src="images/sample-1.jpg">
               <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
+              {{ marvel.name }}
               <p>I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively.</p>
             </div>
@@ -18,8 +19,3 @@
         </div>
   </div>
 </div>
-=======
-<div>
-
-</div>
->>>>>>> db034a813ab4b84d411bad99a39d21a2e90edb05
