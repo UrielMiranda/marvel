@@ -4,9 +4,8 @@
   angular.module("marvel")
   .controller("marvelCtrl", marvelCtrl);
 
-  // marvelCtrl.$inject = ["marvelCtrl"]
-  function marvelCtrl(){
+  function marvelCtrl(characters){
     var marvel = this;
-
+    marvel.characters = characters;
   }
 })();

@@ -8,7 +8,10 @@
 
   charactersData.$inject = ["apiMarvel"];
   function charactersData(apiMarvel){
-    return apiMarvel.query();
+
+    return apiMarvel.get().$promise.then( function(response){
+      return response.data.results;
+    });
   }
 
   configuration.$inject = ['$routeProvider'];
