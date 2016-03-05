@@ -11,6 +11,7 @@
 
     return apiMarvel.get().$promise.then( function(response){
       return response.data.results;
+      console.log(response.data.results);
     });
   }
 
