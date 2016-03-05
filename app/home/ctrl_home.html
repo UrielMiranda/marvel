@@ -4,13 +4,18 @@
           {{home}}
           <div class="card" ng-repeat="character in marvel.characters">
             <div class="card-image">
-              <img src="images/sample-1.jpg">
-              <span class="card-title">Card Title</span>
+              <img ng-src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}">
+              <span class="card-title">{{ character.name}}</span>
             </div>
             <div class="card-content">
-              {{ marvel.name }}
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <h1>Descripción</h1>
+              <p>{{character.description}}</p>
+            </div>
+            <div class="card-content">
+              <h1>Comics</h1>
+              <p ng-repeat="item in character.comics.items">
+               {{ item.name}}
+              </p>
             </div>
             <div class="card-action">
               <a href="#">This is a link</a>
