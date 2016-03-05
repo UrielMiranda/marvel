@@ -5,15 +5,23 @@
   .module("marvel")
   .config(configuration);
 
-  configuration.$inject = ['$routeProvider'];
 
+  charactersData.$inject = ["apiMarvel"];
+  function charactersData(apiMarvel){
+    return apiMarvel.query();
+  }
+
+  configuration.$inject = ['$routeProvider'];
   function configuration($routeProvider){
     $routeProvider
     .when('/',
       {
-        templateUrl : './app/home/ctrl_home.html',
-        controller  : 'marvelCtrl',
-        controllerAs: "marvel"
+        templateUrl  : './app/home/ctrl_home.html',
+        controller   : 'marvelCtrl',
+        controllerAs : "marvel",
+        resolve      : {
+          characters: charactersData,
+        }
       })
       .otherwise({
         redirectTo : '/'
